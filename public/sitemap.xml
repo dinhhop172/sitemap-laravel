@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/vendor/sitemap/styles/xml.xsl" type="text/xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+	<loc>http://127.0.0.1:8000</loc>
+		<priority>1</priority>
+		<lastmod>2023-03-01T08:45:20+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://127.0.0.1:8000/users/linh-vuc-nguyen-to-loi</loc>
+		<priority>1</priority>
+		<lastmod>2023-02-28T08:27:03+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://127.0.0.1:8000/users/khong-che-vuc-sau</loc>
+		<priority>1</priority>
+		<lastmod>2023-02-28T08:26:38+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://127.0.0.1:8000/users/phan-bon-hao-hoc</loc>
+		<priority>1</priority>
+		<lastmod>2023-02-28T08:26:18+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://127.0.0.1:8000/users/mot-cay-dua</loc>
+		<priority>1</priority>
+		<lastmod>2023-02-28T08:26:02+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://127.0.0.1:8000/users/trai-bong</loc>
+		<priority>1</priority>
+		<lastmod>2023-02-28T08:25:34+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+</urlset>
+

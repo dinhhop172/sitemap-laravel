@@ -1,0 +1,19 @@
+{
+    "name": "hop/sitemap",
+    "description": "package sitemap",
+    "autoload": {
+        "psr-4": {
+            "Hop\\Sitemap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hophd",
+            "email": "hophd@bap.jp"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^10.1",
+        "illuminate/routing": "^10.1"
+    }
+}
