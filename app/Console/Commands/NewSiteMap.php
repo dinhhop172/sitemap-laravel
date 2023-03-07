@@ -3,19 +3,18 @@
 namespace App\Console\Commands;
 
 use Carbon\Carbon;
+use DOMDocument;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 
-class CreateSiteMap extends Command
+class NewSiteMap extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'sitemap:create';
+    protected $signature = 'sitemap:new';
 
     /**
      * The console command description.
@@ -41,21 +40,20 @@ class CreateSiteMap extends Command
      */
     public function handle()
     {
-        $sitemap = App::make('sitemap');
+        $sitemap = app()->make('sitemaps');
 
-        $sitemap->add(route('index'), Carbon::now('Asia/Ho_Chi_Minh'), 1, 'daily');
+        $sitemap->addUrl(route('index'), Carbon::now('Asia/Ho_Chi_Minh'), 1, 'daily');
 
         $products = DB::table('products')->orderBy('created_at', 'desc')->get();
-
         foreach ($products as $product) {
-            //$sitemap->add(url, thời gian, độ ưu tiên, thời gian quay lại)
-            $sitemap->add(route('products.show', $product->slug), $product->updated_at, 1, 'daily');
+            $sitemap->addUrl(route('products.show', $product->slug), Carbon::parse($product->updated_at), 1, 'daily');
         }
 
-        $sitemap->store('xml', 'sitemap');
-
-        if (File::exists(public_path() . '/sitemap.xml')) {
-            File::copy(public_path('sitemap.xml'), base_path('sitemap.xml'));
+        $products_paginate = DB::table('products')->paginate(2);
+        for ($i = 1; $i <= $products_paginate->lastPage(); $i++) {
+            $sitemap->addUrl(route('users.index', 'page='.$i), Carbon::parse($product->updated_at), 1, 'daily');
         }
+
+        return $sitemap->generateXml();
     }
 }

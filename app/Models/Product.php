@@ -12,4 +12,11 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = ['name', 'price', 'slug'];
+
+        /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['expired_at'];
 }

@@ -19,18 +19,22 @@
         "laravel/sail": "^1.21",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^9.5.10",
+        "squizlabs/php_codesniffer": "3.*"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Packages\\Sitemap\\Src\\": "packages/sitemap/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Packages\\Sitemap\\Src\\": "packages/sitemap/src/"
         }
     },
     "scripts": {
@@ -46,6 +50,12 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "phpstan": [
+            "./vendor/bin/phpstan analyse app config public routes"
+        ],
+        "codesniff": [
+            "./vendor/bin/phpcs --standard=phpcs.xml app config routes"
         ]
     },
     "extra": {

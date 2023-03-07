@@ -9,11 +9,7 @@
     "authors": [
         {
             "name": "hophd",
-            "email": "hophd@bap.jp"
+            "email": "dinhhop172@gmail.com"
         }
-    ],
-    "require": {
-        "illuminate/support": "^10.1",
-        "illuminate/routing": "^10.1"
-    }
+    ]
 }
