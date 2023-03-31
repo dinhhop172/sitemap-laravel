@@ -53,4 +53,9 @@ class SitemapGenerator
         //     'Content-Type' => 'application/xml',
         // ]);
     }
+
+    public static function xinchao()
+    {
+        return 'xinchao';
+    }
 }

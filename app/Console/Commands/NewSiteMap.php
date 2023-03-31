@@ -44,7 +44,7 @@ class NewSiteMap extends Command
 
         $sitemap->addUrl(route('index'), Carbon::now('Asia/Ho_Chi_Minh'), 1, 'daily');
 
-        $products = DB::table('products')->orderBy('created_at', 'desc')->get();
+        $products = DB::table('products')->orderBy('id', 'desc')->get();
         foreach ($products as $product) {
             $sitemap->addUrl(route('products.show', $product->slug), Carbon::parse($product->updated_at), 1, 'daily');
         }

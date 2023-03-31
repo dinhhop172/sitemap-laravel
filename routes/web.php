@@ -28,5 +28,6 @@ Route::prefix('users')->group(function () {
 Route::get('vc', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('asd', [SitemapController::class, 'test']);
 Route::get('a', function () {
-    dd(Carbon::parse('2019-07-23 14:51'));
+    // dd(\Sitemaps::xinchao);
+    // dd(Carbon::parse('2019-07-23 14:51'));
 });

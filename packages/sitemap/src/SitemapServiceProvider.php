@@ -16,6 +16,8 @@ class SitemapServiceProvider extends ServiceProvider
         $this->app->singleton('sitemaps', function() {
             return new SitemapGenerator();
         });
+
+        // $this->app->alias('sitemaps', SitemapGenerator::class);
     }
 
     /**
@@ -27,4 +29,12 @@ class SitemapServiceProvider extends ServiceProvider
     {
 
     }
+
+    // /**
+    //  * {@inheritdoc}
+    //  */
+    // public function provides()
+    // {
+    //     return ['sitemaps', SitemapGenerator::class];
+    // }
 }
